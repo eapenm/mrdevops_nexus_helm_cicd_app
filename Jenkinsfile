@@ -24,12 +24,13 @@ stage('Quality Gate status'){
     }
 }
 
-
-
+stage('dockerbuild & docker push to Nexus repo'){
+    steps{
+        script{
+            
+        }
+    }
 }
-
-
-
 
 
 
