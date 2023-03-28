@@ -34,6 +34,6 @@ stage('Quality Gate status'){
 
 
 
-
+}
 
 }
