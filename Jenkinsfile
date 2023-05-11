@@ -27,7 +27,7 @@ stage('Quality Gate status'){
     }
 }
 
-stage('dockerbuild & docker push to Nexus repo'){
+stage('dockerbuild & docker push to Nexus repository'){
     steps{
         script{
             withCredentials([string(credentialsId: 'nexus_passwd', variable: 'nexus_creds')]) {
@@ -46,9 +46,16 @@ stage('dockerbuild & docker push to Nexus repo'){
         }
     }
 }
+}
+stage('Identifying misconfigs using datree in helm chart'){
+    steps{
+        script{
+            dir('kubernetes/myapp/') {
+                sh 'helm datree test .'
 
-
-
+             }
+        }
+    }
 }
 
 }
