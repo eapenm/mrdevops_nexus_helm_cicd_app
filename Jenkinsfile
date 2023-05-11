@@ -32,13 +32,13 @@ stage('dockerbuild & docker push to Nexus repository'){
         script{
             withCredentials([string(credentialsId: 'nexus_passwd', variable: 'nexus_creds')]) {
             sh '''
-              docker build -t 54.196.193.5:8083/springapp:${VERSION} .
+              docker build -t 3.90.88.236:8083/springapp:${VERSION} .
 
-               docker login -u admin -p $nexus_creds 54.196.193.5:8083
+               docker login -u admin -p $nexus_creds 3.90.88.236:8083
 
-               docker push 54.196.193.5:8083/springapp:${VERSION}
+               docker push 3.90.88.236:8083/springapp:${VERSION}
                
-               docker rmi 54.196.193.5:8083/springapp:${VERSION}
+               docker rmi 3.90.88.236:8083/springapp:${VERSION}
 
 
             '''
