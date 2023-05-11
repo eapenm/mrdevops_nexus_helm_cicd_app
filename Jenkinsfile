@@ -52,3 +52,4 @@ stage('dockerbuild & docker push to Nexus repo'){
 }
 
 }
+}
